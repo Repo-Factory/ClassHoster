@@ -10,13 +10,19 @@ This uses python sockets for IPC and the pickle package for dynamic serializatio
 
 The basic idea is that we want to make a generic request to some port, and have the server hosting that port run a specific piece of code for us. The way we can do this is base our server around a class. Every python class has a getattr function which allows us to get any function attached to that class. Then we can pass in any number of keyword arguments. 
 
-This allows us to "host" different robotic systems on different ports. So we could say, sensor X is on port 5000, motor control is on port 5001, etc... Then if we want to ask one of those systems to perform a task, we just send a generic request (so always the same type of request) to the associated port, and it will call the appropriate code. We don't have to plan those systems at all beforehand to work with this system, it uses python's builtin tools to "host" a python class on a port. The generic request looks something like this
+This allows us to "host" different robotic systems on different ports. So we could say, 
+    
+    sensor X ---> port 5000, 
+    motor control ---> port 5001
+    camera ---> port 5002
+    
+Then if we want to ask one of those systems to perform a task, we just send a generic request (so always the same type of request) to the associated port, and it will call the appropriate code. We don't have to plan those systems at all beforehand to work with this system, it uses python's builtin tools to "host" a python class on a port. The generic request looks something like this
 
-call_service(port=1000, // You should give this a system name instead of port number in the [config](config/services.py)
-             request=GenericRequest(
-                function="move", 
-                args={"distance": 1}
-))
+    call_service(port=1000, // You should give this a system name instead of port number in the [config file](config/services.py)
+                request=GenericRequest(
+                    function="move", 
+                    args={"distance": 1}
+    ))
 
 This is assuming some kind of control system is on port 1000 which has a function called move that takes a distance parameter. This would tell the system to move 1 meter for example. The generic server will receive the request and call control_system.move(distance=1) using reflection.
 
@@ -44,4 +50,4 @@ In the main directory, you'll find [client.py](main/client.py) and [server.py](m
 The other files like [defaults.py](utility/defaults.py) and [req_resp.py](utility/req_resp.py) are more to ease the use or provide an example of how things may be used. Use the [services.py](config/services.py) file to define your own custom layout of services in your project. For example, think high level components of your system you want to offer on separate processes. This is like a config file that will say which port each service is run on.
 
 ## Author
-[Conner Sommerfield](github.com/repo-factory)
+[Conner Sommerfield](https://github.com/repo-factory)
