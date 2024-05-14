@@ -1,9 +1,8 @@
-# Generic Service/Client
+# Generic Service/Client API System
 
 ## Description
 This is an extremely easy to use IPC strategy using sockets that can facilitate request/response architectures between various programs.
-It takes advantage of dynamic typing in python to allow a flexible way of sending requests and recieving responses without having to predefine data fields.
-This can be dangerous but is extremely helpful for a quick way to connect multiple processes. It also provides a generic "protocol" to communicate between these services/clients with a universal request type.
+It provides a flexible way of sending requests and recieving responses between processes and provides a generic "protocol" to communicate with a universal request type. In other words, it's a way to glue various systems together without separate systems having to plan for it. It's a generic way to connect various pieces (components) into one system (robot).
 
 ## Explanation
 This uses python sockets for IPC and the pickle package for dynamic serialization of requests/responses. The generic server uses python reflection and expanded dictionary args (kwargs) to make a dynamic API. 
