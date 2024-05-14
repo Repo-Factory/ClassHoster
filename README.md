@@ -42,3 +42,6 @@ As you can see this will always return whatever the function call returns, and b
 In the main directory, you'll find [client.py](main/client.py) and [server.py](main/server.py) which are the two main files you want to pay attention to. The server is run and "hosts" a callback function. If the call_service function in [client.py](main/client.py) is run, it will send a request to the server, which will cause the server call the assigned callback function with the request as a parameter and return the response to the caller. Defaults were set up so this can be seen without any setup. Run the [server.py](main/server.py) and then call it with [client.py](main/client.py) in a another terminal to see this in action.
 
 The other files like [defaults.py](utility/defaults.py) and [req_resp.py](utility/req_resp.py) are more to ease the use or provide an example of how things may be used. Use the [services.py](config/services.py) file to define your own custom layout of services in your project. For example, think high level components of your system you want to offer on separate processes. This is like a config file that will say which port each service is run on.
+
+## Author
+[Conner Sommerfield](github.com/repo-factory)
