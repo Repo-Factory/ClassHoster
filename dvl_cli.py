@@ -21,7 +21,7 @@ class DVLData:
         ))
         
 
-    def parseJson(self, json_dict):
+    def parse_json(self, json_dict):
         try:    
             x = json_dict["x"]
             y = json_dict["y"]
@@ -35,7 +35,7 @@ class DVLData:
             print("Failed to parse JSON:", e)
             return []  # Return an empty list if parsing fails
 
-    def publishData(self):
+    def publish_data(self):
         # Publish the extracted A50 sensor data
         print("Publishing State Data:")
         print("Yaw:", self.yaw, "Pitch:", self.pitch, "Roll:", self.roll)
@@ -45,7 +45,7 @@ class DVLData:
         try:
             dvl_data = self.get_dvl_data()
             while dvl_data is not None:
-                a50_data = self.parseJson(dvl_data)
+                a50_data = self.parse_json(dvl_data)
                 if a50_data:
                     self.x = a50_data[3]
                     self.y = a50_data[4]
@@ -53,7 +53,7 @@ class DVLData:
                     self.yaw = a50_data[0]
                     self.pitch = a50_data[1]
                     self.roll = a50_data[2]
-                    self.publishData()
+                    self.publish_data()
         except Exception as e:
             print("Error in getting A50 data:", e)
 
