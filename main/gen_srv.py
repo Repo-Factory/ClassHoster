@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from req_resp import GenericRequest
-from server import start_server
+from utility.req_resp import GenericRequest
+from main.server import start_server
 
 def generic_callback(request: GenericRequest, object): 
     """ 

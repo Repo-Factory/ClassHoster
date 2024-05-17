@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-from req_resp import GenericRequest
+from utility.req_resp import GenericRequest
 
 class Defaults():
     DEFAULT_NAME    = "Generic"
-    LOCALHOST       = '0.0.0.0'
+    LOCALHOST       = '127.0.0.1'
     PORT            = 10000
-    BUFFER_SIZE     = 1000
+    BUFFER_SIZE     = 1024
 
     """ Example Callback """
     REQUEST = GenericRequest("Default Function", {"arg1": "default"})  
