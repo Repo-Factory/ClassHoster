@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from utility.req_resp import GenericRequest
+from req_resp import GenericRequest
 
 class Defaults():
     DEFAULT_NAME    = "Generic"

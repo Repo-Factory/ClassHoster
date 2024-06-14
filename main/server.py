@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import socket
-from utility.server_log import Logging
-from utility.defaults import Defaults
+from server_log import Logging
+from defaults import Defaults
 import pickle
 
 def loop(name: str, sock: socket.socket, callback):

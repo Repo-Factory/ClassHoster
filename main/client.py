@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import socket
-from utility.defaults import Defaults
+from defaults import Defaults
 import pickle
 
 def call_service(host=Defaults.LOCALHOST, port=Defaults.PORT, request=Defaults.REQUEST):
