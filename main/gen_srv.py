@@ -12,11 +12,12 @@ def generic_callback(request: GenericRequest, object):
     function_call = getattr(object, request.function)
     return function_call(**request.args)
 
-def start_generic_server(name: str, port: str, object):
+def start_generic_server(name: str, port: str, classtype):
     """ 
         Instantiate any custom class type (before calling this) and pass it in as object param
         Setup your class on any (free) port you like with whatever name you like
     """
+    object = classtype()
     try:
         start_server(name=name, port=port, callback=lambda request: generic_callback(request, object))
     except Exception as e:

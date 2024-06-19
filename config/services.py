@@ -8,5 +8,5 @@ class ServiceNames():
 
 ServicePorts = {
     ServiceNames.DEFAULT: Defaults.PORT,
-    ServiceNames.DVL: 56789,
+    ServiceNames.DVL: 6000,
 }
