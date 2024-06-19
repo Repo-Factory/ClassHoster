@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from utility.defaults import Defaults
+from defaults import Defaults
 
 class ServiceNames():
     DEFAULT = "DEFAULT"
