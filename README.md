@@ -4,12 +4,9 @@
 Long READMEs are scary, so I'll keep this short. There is more info in the docs/README.md.
 This package is meant to take YOUR class, and make it very easy to use. Do this
 
-    git clone https://github.com/Repo-Factory/ClassHoster
-    install.sh (you're using ROBOT_LIB right? https://github.com/Package-Repository/install)
-    ROBOT.py
-    cd ~/ROBOT_LIB/ROBOT_API
-    python3 -m http.server 7000 &
-    firefox http://localhost:7000
+    git clone https://github.com/Repo-Factory/ClassHoster && cd ClassHoster
+    install.sh && ROBOT.py g && sleep 0.3 && code ~/ROBOT_LIB/ROBOT_API
+
 
 Installing this package to ROBOT_LIB and running the main ROBOT.py script will host the example classes I've provided.
 
