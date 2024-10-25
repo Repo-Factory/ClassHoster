@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from req_resp import GenericRequest
 
-class Defaults():
+class Defaults:
     DEFAULT_NAME    = "Generic"
     LOCALHOST       = '127.0.0.1'
     PORT            = 10000

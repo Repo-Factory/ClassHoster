@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-class Logging():
+class Logging:
     @staticmethod
     def log_server_active_message(name: str, host: str, port: str):
         print(f"{name} Server is Up and Running on {host}:{port}")

@@ -59,7 +59,7 @@ Another very important file is the [gen_srv.py](main/gen_srv.py) which is the wa
 
 Fill this with the details of your custom service
 
-The other files like [defaults.py](utility/defaults.py) and [req_resp.py](utility/req_resp.py) are more to ease the use or provide an example of how things may be used. Use the [services.py](config/services.py) file to define your own custom layout of services in your project. For example, think high level components of your system you want to offer on separate processes. This is like a config file that will say which port each service is run on.
+The other files like [defaults.py](utility/types/defaults.py) and [req_resp.py](utility/types/req_resp.py) are more to ease the use or provide an example of how things may be used. Use the [services.py](tools/host_cls_client.py) file to define your own custom layout of services in your project. For example, think high level components of your system you want to offer on separate processes. This is like a config file that will say which port each service is run on.
 
 ## Author
 [Conner Sommerfield](https://github.com/repo-factory)
