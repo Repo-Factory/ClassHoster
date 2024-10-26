@@ -11,4 +11,13 @@ You can see generated stubs here for example class I provided.
 
     code ~/ROBOT_LIB/ROBOT_API.py
 
-Running ROBOT.py script will host the classes provided in ROBOT_SYSTEMS. Place in your systems to host them.
+Running ROBOT.py script will host the classes provided in ROBOT_SYSTEMS. Place in your systems to host them.  
+To see the examples working live you need two terminals. In the first one run
+
+    ROBOT.py
+
+And in the second
+
+    test_class_hoster.py
+
+You'll see some output in the 2nd terminal that will help understand why this system is helpful

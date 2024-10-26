@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from timer import Timer
 
 class ZixClass:
@@ -22,4 +24,7 @@ class BucketClass:
         self.things = 0
     def add_to_bucket(self, things: int):
         self.things += things
+        return self.things
+    def sub_from_bucket(self, things: int):
+        self.things -= things
         return self.things
