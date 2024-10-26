@@ -54,4 +54,3 @@ class ClassHoster:
                 f.write(f"   return call_service(port={class_port}, \n"
                         f"      request=GenericRequest(function=\"{func_name}\", \n"
                         f"      args={{{args_dict}}}))\n\n")
-        print(f"Function stubs have been written to {output_file}.")

@@ -20,5 +20,5 @@ def start_generic_server(name: str, port: str, classtype):
     object = classtype()
     try:
         start_server(name=name, port=port, callback=lambda request: generic_callback(request, object))
-    except Exception as e:
-        print(e)
+    except KeyboardInterrupt:
+        print("Shutting down server...")

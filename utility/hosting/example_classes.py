@@ -1,14 +1,25 @@
+from timer import Timer
+
 class ZixClass:
     @staticmethod
     def whats_my_name():
         return "Zix Was Here"
 
-class SuckClass:
-    @staticmethod
-    def this_class_sux(times: int):
-        return f"I equate to {times} units of suckage"
+class TimeClass:
+    def __init__(self):
+        self.seconds_passed = 0
+        self.timer = Timer(1.0, self._increment_seconds)
+        self.timer.start()
 
-class CoolClass:
-    @staticmethod
-    def cool_params(cool_thing: str):
-        return f"I'm the coolest {cool_thing} you've ever seen"
+    def _increment_seconds(self):
+        self.seconds_passed += 1
+
+    def get_seconds_passed(self):
+        return self.seconds_passed
+
+class BucketClass:
+    def __init__(self):
+        self.things = 0
+    def add_to_bucket(self, things: int):
+        self.things += things
+        return self.things
