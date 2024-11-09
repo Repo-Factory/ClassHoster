@@ -28,3 +28,10 @@ class BucketClass:
     def sub_from_bucket(self, things: int):
         self.things -= things
         return self.things
+    
+class ExampleClass:
+    def __init__(self):
+        self.data = 5
+        
+    def get_data(self): 
+        return self.data
