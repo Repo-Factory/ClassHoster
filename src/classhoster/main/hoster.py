@@ -22,7 +22,7 @@ class ClassHoster:
                 f.write(f"# Generated stubs for All Classes Hosted By ClassHoster\n\n")
                 f.write(f"from classhoster.main.client import call_service\n")
                 f.write(f"from classhoster.utility.types.req_resp import GenericRequest\n")
-                f.write(f"from typing import Type, Any\n\n")
+                f.write("")
             cls._instance.port = generate_port()
         return cls._instance
 
