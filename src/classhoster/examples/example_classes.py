@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from timer import Timer
+from classhoster.utility.tools.timer import Timer
 
 class ZixClass:
     @staticmethod

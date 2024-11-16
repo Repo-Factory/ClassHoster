@@ -1,11 +1,12 @@
 import os
 import inspect
 from typing import Type, Any
-from gen_srv import start_generic_server
-from port_allocator import generate_port
 from multiprocessing import Process
+from classhoster.main.gen_srv import start_generic_server
+from classhoster.utility.tools.port_allocator import generate_port
+from classhoster.utility.tools.file_reader import get_robot_api
 
-output_file = os.path.join(os.getenv("HOME"), "ROBOT_LIB", "ROBOT_API.py")
+output_file = get_robot_api()
 
 class ClassHoster:
 
@@ -19,8 +20,8 @@ class ClassHoster:
             cls._instance = super(ClassHoster, cls).__new__(cls)
             with open(output_file, 'w') as f:
                 f.write(f"# Generated stubs for All Classes Hosted By ClassHoster\n\n")
-                f.write(f"from client import call_service\n")
-                f.write(f"from req_resp import GenericRequest\n")
+                f.write(f"from classhoster.main.client import call_service\n")
+                f.write(f"from classhoster.utility.types.req_resp import GenericRequest\n")
                 f.write(f"from typing import Type, Any\n\n")
             cls._instance.port = generate_port()
         return cls._instance
@@ -54,3 +55,10 @@ class ClassHoster:
                 f.write(f"   return call_service(port={class_port}, \n"
                         f"      request=GenericRequest(function=\"{func_name}\", \n"
                         f"      args={{{args_dict}}}))\n\n")
+
+def main():
+    classHoster = ClassHoster()
+    classHoster.host_class(ClassHoster)
+
+if __name__ == "__main__":
+    main()

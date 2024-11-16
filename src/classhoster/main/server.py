@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import socket
-from server_log import Logging
-from defaults import Defaults
 import pickle
+from classhoster.utility.logger.server_log import Logging
+from classhoster.utility.types.defaults import Defaults
 
 def loop(name: str, sock: socket.socket, callback):
     conn, addr = sock.accept()

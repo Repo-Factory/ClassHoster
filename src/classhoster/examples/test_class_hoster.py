@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import random
 
-from ROBOT_API import whats_my_name
-from ROBOT_API import add_to_bucket
-from ROBOT_API import get_seconds_passed
+from classhoster.public.robot_api import whats_my_name
+from classhoster.public.robot_api import add_to_bucket
+from classhoster.public.robot_api import get_seconds_passed
 
 who_was_here = whats_my_name()
 items_in_bucket = add_to_bucket(1)
